@@ -34,9 +34,9 @@ class Solution {
         num1Pos = num2Pos = mergedPos = 0;
 
         while(num1Pos<m && num2Pos<n){
-            if(nums1[num1Pos]<nums2[num2Pos] && nums1[num1Pos] != 0){
+            if(nums1[num1Pos]<nums2[num2Pos]){
                 merged[mergedPos++] = nums1[num1Pos++];
-            } else if(nums2[num2Pos]!=0){
+            } else{
                 merged[mergedPos++] = nums2[num2Pos++];
             }
         }
