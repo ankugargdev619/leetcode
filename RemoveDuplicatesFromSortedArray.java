@@ -38,20 +38,13 @@ Constraints:
 
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int k = 0;
+        int k = 1;
         int temp[] = new int[nums.length];
-        for(int i=0;i<nums.length;i++){
-            if(k==0){
-                temp[k++] = nums[i];
-            } else if(temp[k-1] != nums[i]){
-                temp[k++] = nums[i];
+        for(int i=1;i<nums.length;i++){
+            if(nums[k-1] != nums[i]){
+                nums[k++] = nums[i];
             }
         }
-
-        for(int i=0;i<k;i++){
-            nums[i] = temp[i];
-        }
-
         return k;
     }
 }
