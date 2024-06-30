@@ -1,0 +1,13 @@
+Problem # 169 : Majority Element
+Code Reference : MajorityElement.java
+
+Solution 1 : This is based on storing the count of the occurence in a map object
+For optimization for loop can be break when count of any integer exceeds n/2
+Solution 2 : This is based on intuition that the sorted array will have majority element at n/2
+Solution 3 : Moore voting method
+-> Assume first element as majority element
+-> Cast one vote to the element
+-> Check next elementin array
+-> If next element is same as majority element, then increase the vote
+-> If next element is not same as mojority element, decrease the vote
+-> If votes for majority element is 0 then change the majority element to current element and change vote to 1
