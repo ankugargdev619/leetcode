@@ -23,7 +23,7 @@ Constraints:
 0 <= k <= 105
 **/
 
-class Solution {
+class Solution1 {
     public void rotate(int[] nums, int k) {
         if(nums.length==1){
             return;
@@ -38,6 +38,31 @@ class Solution {
         }
         for(int i=0;i<nums.length;i++){
             nums[i] = temp[i];
+        }
+    }
+}
+
+class Solution2 {
+    public void rotate(int[] nums, int k) {
+        if(nums.length==1){
+            return;
+        }
+        if(k>nums.length){
+            k=k%nums.length;
+        }
+        reverse(nums,0,nums.length-1);
+        reverse(nums,0,k-1);
+        reverse(nums,k,nums.length-1);
+
+    }
+
+    public void reverse(int[] array,int start, int end){
+        while(start<end){
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
         }
     }
 }
