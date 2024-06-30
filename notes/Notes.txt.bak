@@ -12,19 +12,3 @@ Solution 3 : Moore voting method
 -> If next element is not same as mojority element, decrease the vote
 -> If votes for majority element is 0 then change the majority element to current element and change vote to 1
 
-
-Problem # 150 : Rotate Array
-Code Reference : RotateArray.java
-
-Solution 1 : This method uses another temporary variable to store the rotated array and then assign it back
-Solution 2 : This method involves reversing the array
--> Reverse the array completely
--> Reverse first k elements
--> Reverse remaining elements
-e.g. input = [1,2,3,4,5,6,7] and k = 4
-reversed = [7,6,5,4,3,2,1]
-reverse with first k elements = [4,5,6,7,3,2,1]
-reverse remaining elements = [4,5,6,7,1,2,3]
-Now the elements have been pushed to right by 4
-
-
