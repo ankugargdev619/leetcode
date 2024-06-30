@@ -18,7 +18,8 @@ n == nums.length
  
 Follow-up: Could you solve the problem in linear time and in O(1) space?
 **/
-class Solution {
+
+class Solution1 {
     public int majorityElement(int[] nums) {
         int majority = nums[0];
         Map<Integer,Integer> count = new HashMap<>();
@@ -33,5 +34,13 @@ class Solution {
             }
         }
         return majority;
+    }
+}
+
+// Solution 2 : This is based on the intuition that the sorted array will have the majority element occupy the n/2 position
+class Solution2 {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length/2];
     }
 }

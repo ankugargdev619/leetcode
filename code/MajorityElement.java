@@ -44,3 +44,23 @@ class Solution2 {
         return nums[nums.length/2];
     }
 }
+
+// Solution 3 : Moore voting method
+class Solution3 {
+    public int majorityElement(int[] nums) {
+        int majority = nums[0];
+        int vote = 0;
+        for(int num:nums){
+            if(num != majority){
+                vote--;
+                if(vote<1){
+                    majority = num;
+                    vote++;
+                }
+            } else{
+                vote++;
+            }
+        }
+        return majority;
+    }
+}
