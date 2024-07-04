@@ -40,3 +40,26 @@ class Solution {
         return hIndex;
     }
 }
+
+// Another approach but with higher run time
+class Solution {
+    public int hIndex(int[] citations) {
+        int hIndex= 0;
+        int[] nums = new int[citations.length];
+        for(int i=0;i<citations.length;i++){
+            int max = citations[i]>citations.length ? citations.length : citations[i];
+            for(int j= 0;j<max;j++){
+                nums[j] +=1;
+            }
+        }
+
+        for(int i= nums.length-1;i>=0;i--){
+            if(nums[i]==i+1 || nums[i]>i+1){
+                return i+1;
+            }
+        }
+        
+        return hIndex;
+    }
+}
+
